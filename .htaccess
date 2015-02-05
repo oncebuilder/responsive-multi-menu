@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.responsivemultimenu.com$ [NC]
+RewriteRule ^(.*)$ http://responsivemultimenu.com/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^79\.96\.137\.115
+RewriteRule (.*) http://responsivemultimenu.com/$1 [R=301,L]
+
+RewriteRule ^([a-zA-Z]+).html$ index.html [L,QSA]
