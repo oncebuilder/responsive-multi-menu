@@ -1,6 +1,6 @@
 Responsive Multi Menu
 ==========
-Version 1.0.0 has been released. 
+Version 1.1.0 has been released. 
 
 Main Advantages
 =============
