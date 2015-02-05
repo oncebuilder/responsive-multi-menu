@@ -54,7 +54,7 @@
 	display: inline-block;
 	-webkit-transform: rotate(-60deg);
 	transform: rotate(-60deg);
-	top: 0px;
+	top: 1px;
 	right: -2px ;
 	float: left;
 	font-size: 10px;
