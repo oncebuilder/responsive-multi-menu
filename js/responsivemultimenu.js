@@ -138,11 +138,7 @@ function responsiveMultiMenu() {
 	
 	// click toggler interacts in mobile version
 	$('.rmm-toggled, .rmm-toggled .rmm-button').click(function(){
-		if ($(this).is(".rmm-closed")) {
-			$(this).removeClass("rmm-closed");
-		}else {
-			$(this).addClass("rmm-closed");
-		}
+		$(this).toggleClass("rmm-closed");
 	});	
 }
 
