@@ -97,7 +97,7 @@ function responsiveMultiMenu() {
 		var str=''
 		str+='<div class="rmm-toggled rmm-view rmm-closed">'
 			str+='<div class="rmm-toggled-controls">'
-				str+='<div class="rmm-toggled-title">Menu</div>';
+				str+='<div class="rmm-toggled-title">'+config.title+'</div>';
 				str+='<div class="rmm-toggled-button"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></div>';
 			str+='</div>';
 		str+='</div>';
@@ -160,6 +160,7 @@ $(window).resize(function() {
 	var defaultConfig={
 		ahref: "#", //Пригодится, если нахимичено с base. Useful if base tag is set
 		backtext: "back",
+		title: "Menu",
 	};
 
 	if(!window.responsiveMultiMenuConfig) {
