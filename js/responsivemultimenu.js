@@ -56,12 +56,20 @@ function adaptMenu() {
 }
 
 function responsiveMultiMenu() {
+	var config = window.responsiveMultiMenuConfig; //Для краткости. Just for storter code
+
 	$('.rmm').each(function() {
 		// create mobile menu classes here to light up HTML
 		$(this).find("ul").addClass("rmm-submenu");
 		$(this).find("ul:first").addClass("rmm-menu");
 		$(this).find("ul:first").removeClass("rmm-submenu");
-		$(this).find('.rmm-submenu').prepend( '<li class="rmm-back"><a href="#">back</a></li>' );
+		$(this).find('.rmm-submenu').prepend(
+			'<li class="rmm-back">'+
+				'<a href="'+config.ahref+'">'+
+					config.backtext+
+				'</a>'+
+			'</li>'
+		);
 		$(this).find("ul").prev().addClass("rmm-dropdown");
 	
 		// initialize vars
@@ -147,3 +155,20 @@ jQuery(window).load(function() {
 $(window).resize(function() {
  	adaptMenu();
 });
+
+(function(){
+	var defaultConfig={
+		ahref: "#", //Пригодится, если нахимичено с base. Useful if base tag is set
+		backtext: "back",
+	};
+
+	if(!window.responsiveMultiMenuConfig) {
+		window.responsiveMultiMenuConfig = {};
+	}
+
+	for(var prop in defaultConfig) {
+		if(window.responsiveMultiMenuConfig[prop] === undefined){
+			window.responsiveMultiMenuConfig[prop] = defaultConfig[prop];
+		}
+	}
+})();
