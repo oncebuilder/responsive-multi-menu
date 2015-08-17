@@ -19,6 +19,7 @@ function adaptMenu() {
 
 		// width of menu list (non-toggled)
 		$('.rmm-menu').children("li").each(function() {
+			//TODO: maybe we should use $('.rmm-menu > li') without if?
 			if($(this).parent().hasClass('rmm-menu')){
 				width = $(this).outerWidth();//outerWidth();
 				if(width>0){
@@ -36,19 +37,19 @@ function adaptMenu() {
 			
 			//remove all classes from mobile verion
 			$(".rmm-menu ul").removeClass("rmm-subview");
-			$(".rmm-menu li").removeClass("rmm-subover-hidden");
-			$(".rmm-menu li").removeClass("rmm-subover-visible");
+			$(".rmm-menu li").removeClass("rmm-subover-hidden")
+			                 .removeClass("rmm-subover-visible");
 			$(".rmm-menu a").removeClass("rmm-subover-header");
 
-			$(".rmm-toggled").removeClass("rmm-closed");
-			$('.rmm-toggled').hide();
+			$(".rmm-toggled").removeClass("rmm-closed")
+			                 .hide();
 			
 			//$('.rmm-toggled').removeClass("rmm-view");
 			//$('.rmm-toggled').addClass("rmm-closed");
 		}else {
 			$('.rmm-menu').addClass("rmm-mobile");
-			$('.rmm-toggled').show();
-			$('.rmm-toggled').addClass("rmm-closed");
+			$('.rmm-toggled').show()
+			                 .addClass("rmm-closed");
 			
 			//$('.rmm-toggled').removeClass("rmm-closed");
 		}
@@ -61,8 +62,8 @@ function responsiveMultiMenu() {
 	$('.rmm').each(function() {
 		// create mobile menu classes here to light up HTML
 		$(this).find("ul").addClass("rmm-submenu");
-		$(this).find("ul:first").addClass("rmm-menu");
-		$(this).find("ul:first").removeClass("rmm-submenu");
+		$(this).find("ul:first").addClass("rmm-menu")
+		                      .removeClass("rmm-submenu");
 		$(this).find('.rmm-submenu').prepend(
 			'<li class="rmm-back">'+
 				'<a href="'+config.ahref+'">'+
@@ -71,7 +72,13 @@ function responsiveMultiMenu() {
 			'</li>'
 		);
 		$(this).find("ul").prev().addClass("rmm-dropdown");
-	
+
+		if(config.useParentInBack) {
+			$(this).find('.rmm-back > a').each(function(){
+				$(this).html($(this).html()+$(this).parent().parent().prev().text());
+			});
+		}
+
 		// initialize vars
 		var maxWidth = 0;
 		var width = 0;
@@ -94,7 +101,7 @@ function responsiveMultiMenu() {
 		}
 		
 		// create dropdown button
-		var str=''
+		var str='';
 		str+='<div class="rmm-toggled rmm-view rmm-closed">'
 			str+='<div class="rmm-toggled-controls">'
 				str+='<div class="rmm-toggled-title">'+config.title+'</div>';
@@ -115,14 +122,13 @@ function responsiveMultiMenu() {
 
 			var index=$(this).parent().index();
 			
-			var i=0;
 			$(this).parent().parent().children("li").each(function() {
 				if(index==$(this).index()){
-					$(this).removeClass("rmm-subover-hidden");
-					$(this).addClass("rmm-subover-visible");
+					$(this).removeClass("rmm-subover-hidden")
+					       .addClass("rmm-subover-visible");
 				}else{
-					$(this).removeClass("rmm-subover-visible");
-					$(this).addClass("rmm-subover-hidden");
+					$(this).removeClass("rmm-subover-visible")
+					       .addClass("rmm-subover-hidden");
 				}
 			});
 			$(this).addClass("rmm-subover-header");
@@ -158,6 +164,7 @@ $(window).resize(function() {
 		ahref: "#", //Пригодится, если нахимичено с base. Useful if base tag is set
 		backtext: "back",
 		title: "Menu",
+		useParentInBack: false, //Append header of parent menu to back button?
 	};
 
 	if(!window.responsiveMultiMenuConfig) {
