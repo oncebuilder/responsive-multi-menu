@@ -131,9 +131,10 @@ function responsiveMultiMenu() {
 	
 	// click back interacts in mobile version
 	$('.rmm-back a').click(function () {
-		$(this).parent().parent().prev().removeClass("rmm-subover-header");
-		$(this).parent().parent().removeClass("rmm-subview");
-		$(this).parent().parent().parent().parent().find("li").removeClass("rmm-subover-hidden");
+		var grandparent=$(this).parent().parent();
+		grandparent.prev().removeClass("rmm-subover-header");
+		grandparent.removeClass("rmm-subview");
+		grandparent.parent().parent().find("li").removeClass("rmm-subover-hidden");
 	});
 	
 	// click toggler interacts in mobile version
