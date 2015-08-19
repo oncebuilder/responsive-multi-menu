@@ -38,6 +38,7 @@ function adaptMenu() {
 			$(".rmm-menu a").removeClass("rmm-subover-header");
 
 			$(".rmm-toggled").removeClass("rmm-closed")
+			                 .removeClass("rmm-opened")
 			                 .hide();
 			
 			//$('.rmm-toggled').removeClass("rmm-view");
@@ -135,6 +136,7 @@ function responsiveMultiMenu() {
 	// click toggler interacts in mobile version
 	$('.rmm-toggled, .rmm-toggled .rmm-button').click(function(){
 		$(this).toggleClass("rmm-closed");
+		$(this).toggleClass("rmm-opened");
 	});	
 }
 
