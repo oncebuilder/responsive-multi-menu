@@ -140,17 +140,7 @@ function responsiveMultiMenu() {
 	});	
 }
 
-$(window).load(function() {
-    responsiveMultiMenu();
-	adaptMenu();
-});
-
-
-$(window).resize(function() {
- 	adaptMenu();
-});
-
-(function(){
+function loadConfig(){
 	var defaultConfig={
 		ahref: "#", //Пригодится, если нахимичено с base. Useful if base tag is set
 		backtext: "back",
@@ -167,4 +157,14 @@ $(window).resize(function() {
 			window.responsiveMultiMenuConfig[prop] = defaultConfig[prop];
 		}
 	}
-})();
+}
+
+$(window).load(function() {
+	loadConfig();
+	responsiveMultiMenu();
+	adaptMenu();
+});
+
+$(window).resize(function() {
+	adaptMenu();
+});
