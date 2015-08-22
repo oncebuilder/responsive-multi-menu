@@ -1,0 +1,86 @@
+/**
+ * cx27-theme by NickKolok
+ * 
+ * Greetings from Russia, comrads!
+ * 
+ * I've used this menu in real project and I hope my modification should be useful for somebody
+ * Link this file AFTER responsivemultimenu.css
+ * 
+ * Пользовался сим дивным плагином в реальном проекте, тему вываливаю в опенсорс.
+ * Ну и что, что только для мобилок, может, мой костыль кому пригодится.
+ * Подключать ПОСЛЕ responsivemultimenu.css
+ * 
+ * */
+
+.rmm-menu.rmm-mobile {
+	position:absolute;
+	top: 52px;
+}
+
+.rmm-toggled-title {
+	display:none;
+}
+
+.rmm * li {
+	min-height: 42px;
+	vertical-align: middle;
+}
+
+.rmm-toggled-button {
+	border-radius: 7px;
+	margin: 0;
+	padding-left: 3px !important;
+	padding-top: 4px !important;
+	width: 34px;
+	height: 33px;
+ }
+
+.rmm-toggled {
+	min-height: 37px;
+}
+
+.rmm-closed {
+	border-radius: 7px;
+	background-color: #e4e4e4;
+}
+
+.rmm-closed * .rmm-toggled-button{
+	border:0px;
+}
+
+.rmm-closed * span {
+	background-color: #5c5c5c;
+}
+
+.rmm .rmm-back a:after {
+	/*Стрелочка, конечно, красивая, но мы её выключаем*/
+	display:none;
+}
+
+.rmm ul {
+	z-index: 146;
+	background-color: rgba(33,33,33,0.9);
+	font-weight: bold;
+	max-height: 400px;
+	overflow: scroll;
+}
+
+.rmm a {
+	margin-top:2px;
+	min-height: 42px;
+	line-height:42px;
+	background: linear-gradient(to top, #2e2e2e 0%, #a0a0a0 50%, #2e2e2e 100%);
+	border-radius: 8px;
+	text-align: center;
+	font-weight: bold;
+	font-variant: small-caps;
+	font-size: 125%;
+	width: 280px;
+	margin-right:2px;
+	margin-left:2px;
+}
+
+.rmm-back a {
+	background: none;
+	text-align: left;
+}

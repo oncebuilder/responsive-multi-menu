@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Multi Menu Config Demo</title>
+
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+
+	<!-- Include scripts -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script> 
+	<script type="text/javascript" src="js/responsivemultimenu.js"></script>
+
+	<!-- Include styles -->
+	<link rel="stylesheet" href="css/responsivemultimenu.css" type="text/css"/>
+
+	<!-- Include media queries -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+</head>
+<body style="background: #2C2B2C;">
+	<script>
+		window.responsiveMultiMenuConfig={
+			title: 'named menu',
+			backtext: 'Back to ',
+			useParentInBack: true,
+		};
+	</script>
+	<pre>
+		window.responsiveMultiMenuConfig={
+			title: 'named menu',
+			backtext: 'Back to ',
+			useParentInBack: true,
+		};
+	</pre>
+	<div>
+		<div class="rmm style">
+			<ul>
+				<li>
+					<a href="Books.html">Books</a>
+					<ul>
+						<li>
+							<a href="Audiobooks.html">Audiobooks</a>
+						</li>
+						<li>
+							<a href="Cookbooks.html">Cookbooks</a>
+						</li>
+						<li>
+							<a href="Catalogs.html">Catalogs</a>
+						</li>
+						<li>
+							<a href="Other.html">Other</a>
+							<ul>
+								<li><a href="Other.html">Other 1</a></li>
+								<li><a href="Other.html">Other 2</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="Dvds.html">Dvds</a>
+				</li>
+				<li>
+					<a href="Music.html">Music</a>
+					<ul>
+						<li><a href="Cassettes.html">Cassettes</a></li>
+						<li><a href="CD.html">CD</a></li>
+						<li><a href="Records.html">Records</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="Videogames.html">Video games</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
